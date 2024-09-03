@@ -1,0 +1,70 @@
+<!-- Packing Lists Content -->
+<main>
+    <section class="packing-lists">
+        <h2>Your Packing Lists</h2>
+
+        <!-- Tabs for Private and Shared Lists -->
+        <div class="tabs">
+            <button class="tablink active" onclick="openTab(event, 'PrivateList')">Private Packing List</button>
+            <button class="tablink" onclick="openTab(event, 'SharedList')">Shared Packing List</button>
+        </div>
+
+        <!-- Private Packing List -->
+        <div id="PrivateList" class="tabcontent" style="display: block;">
+            <h3>Private Packing List</h3>
+            <ul class="packing-list">
+                <li><input type="checkbox"> Passport</li>
+                <li><input type="checkbox"> Travel Insurance</li>
+                <li><input type="checkbox"> Clothes</li>
+                <li><input type="checkbox"> Toiletries</li>
+                <!-- Add more items as needed -->
+            </ul>
+            <button>Add Item</button>
+        </div>
+
+        <!-- Shared Packing List -->
+        <div id="SharedList" class="tabcontent" style="display: none;">
+            <h3>Shared Packing List</h3>
+            <ul class="packing-list">
+                <li><input type="checkbox"> Tent (Added by Alex)</li>
+                <li><input type="checkbox"> Cooking Set (Added by Maria)</li>
+                <li><input type="checkbox"> First Aid Kit (Added by Chris)</li>
+                <!-- Add more items as needed -->
+            </ul>
+            <button>Add Item</button>
+            <div class="comments-section">
+                <h4>Comments</h4>
+                <textarea placeholder="Add a comment..."></textarea>
+                <button>Post Comment</button>
+                <!-- List of comments -->
+                <ul class="comments-list">
+                    <li><strong>Alex:</strong> Don't forget extra batteries!</li>
+                    <li><strong>Maria:</strong> I'll bring the spices.</li>
+                    <!-- Add more comments as needed -->
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Reuse Footer from index.html -->
+
+<!-- JavaScript to Handle Tabs -->
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+</body>
+
+</html>
